@@ -12,7 +12,6 @@ const routes = {
 //HW1*: what if product data would be stored as an XML?
 
 // 2. create the server object
-
 const server = http.createServer((req, res) => {
   // router
   // 2 varianata
