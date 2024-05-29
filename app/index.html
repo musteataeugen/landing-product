@@ -10,12 +10,40 @@
       
 </head>
 <body>
-    
-    <h1>{title}</h1>
-    <img src="{image}" >
-    <h2>{subtitle}</h2>
-<p>{description}</p>
-<p>{priceAmount}</p>
-<p>{priceCurrency}</p>
+  TBD
+  
+  <script>
+    fetch('/api/product')
+    .then(res => res.json())
+    .then(json =>{
+        let h1 = document.createElement('h1')
+        h1.textContent = json.name
+        document.body.appendChild(h1)
+        // HW1: finish the templateusing DOM comands
+        let img = document.createElement('img')
+        img.src = json.image
+        document.body.appendChild(img)
+
+        let h2 = document.createElement('h2')
+        h2.textContent = json.subtitle
+        document.body.appendChild(h2)
+
+        let h4 = document.createElement('h4')
+        h4.textContent = json.description
+        document.body.appendChild(h4)
+
+        let p = document.createElement('p')
+        p.textContent = json.price.Amount        
+        document.body.appendChild(p) 
+
+        let span = document.createElement('span')
+        span.textContent = json.price.Currency
+        document.body.appendChild(span)
+
+        //HW2*:what if the endpoint would offer XML data
+
+    })
+  </script>
+  
 </body>
 </html>
