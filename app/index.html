@@ -32,6 +32,14 @@
         h4.textContent = json.description
         document.body.appendChild(h4)
 
+        let ul = document.createElement('ul')
+        json.tags.forEach(tag => {
+            let li = document.createElement('li')
+            li.textContent = tag
+            ul.appendChild(li)
+        })
+        document.body.appendChild(ul)
+
         let p = document.createElement('p')
         p.textContent = json.price.Amount        
         document.body.appendChild(p) 
